@@ -1,4 +1,4 @@
-// functions
+// functions - return, parameters, default parameters, rest parameters
 
 function  hello(){
     //function body
@@ -39,3 +39,70 @@ function lengthOfMe(...params){
 }
 
 console.log("Sum equals: " + lengthOfMe(5, 6, 7, 8))
+
+// functions - constructor, recursion, anonymous, arrow, generator functions
+
+
+// function constructor
+
+let func = new Function("x", "y", "return x*y;");
+
+console.log("Function constructor var func: " 
++ func(5, 6))
+
+
+// recursion
+
+function factorial(num){
+    if(num <= 0 ){
+        return 1;
+    }else{
+       return num * factorial(num-1)
+    }
+}
+
+console.log("The factorial is: " + factorial(5))
+
+// anonymous fucntion
+var x = function() {
+    console.log("I'm an anonymous function");
+};
+
+x();
+
+// lambda functions: parameters, fat arrow notation, statements
+
+var food = (x, y, z) => {
+    return x + y + z;
+}
+
+console.log("This is a lambda function: " +
+food(10, 20, 30 ))
+
+// lambda function: second variation
+
+var food = (x, y, z) => x + y + z;
+
+console.log("This is the second variation of a lambda function: " +
+food(10, 20, 30 ))
+
+// lambda function: third variation
+
+var food = x => x + 100;
+
+console.log("This is the third variation of a lambda function: " +
+food(10 ))
+
+// generator functions
+
+function* query(){
+    const name = yield "What's your name?"
+    const sport = yield "What's your favourite sport?"
+    return `${name}'s fav sport is:  ${sport}`;
+}
+
+const instance = query();
+
+console.log(instance.next());
+console.log(instance.next("Miguel"));
+console.log(instance.next("Basketball"));
