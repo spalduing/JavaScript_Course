@@ -40,6 +40,7 @@ function lengthOfMe(...params){
 
 console.log("Sum equals: " + lengthOfMe(5, 6, 7, 8))
 
+//=======================================================================================
 // functions - constructor, recursion, anonymous, arrow, generator functions
 
 
@@ -106,3 +107,53 @@ const instance = query();
 console.log(instance.next());
 console.log(instance.next("Miguel"));
 console.log(instance.next("Basketball"));
+
+//=======================================================================================
+// Ways of use generator functions/
+console.log("\n\n")
+
+console.log("Generator fucntion: Generates infinite natural numbers")
+function* infiniteNaturalNumbers(){
+    let number = 1
+    while(true){
+        yield number++
+    }
+}
+
+var naturalNumber = infiniteNaturalNumbers();
+
+console.log(naturalNumber.next().value);
+console.log(naturalNumber.next().value);
+console.log(naturalNumber.next().value);
+console.log(naturalNumber.next().value);
+
+
+console.log("\nGenerator fucntion: A generator function within a generator function")
+
+function* inception(name){
+    yield `Hi ${name}, hello from inception `
+}
+function* start(name){
+    yield `Hi ${name} we're starting the inception`
+    yield* inception(name)
+    yield "bye!"
+}
+
+let gen = start("Miguel");
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+console.log(gen.next().value);
+
+console.log("\nGenerator fucntion: Passin argument into a generator function")
+
+function* myGenerator(){
+    console.log("Hey, ", yield)
+    console.log("Are you ", yield)
+}
+
+var generator = myGenerator();
+
+generator.next()
+generator.next('Miguel')
+generator.next('Diaz')
