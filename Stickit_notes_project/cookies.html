@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cookies</title>
+<script>
+    function clicked(){
+        console.log("Button Clicked");
+        // let key = document.myForm.name.value;
+        // let value = document.myForm.name2.value;
+
+        // localStorage.setItem(key, value);
+
+        // localStorage.removeItem("Miguelangel");
+
+        // console.log(localStorage.getItem("Juan Jose"));
+
+        localStorage.clear();
+
+    }
+</script>
+</head>
+<body>
+    <form name="myForm">
+        Enter key info : <input  type="text" name="name" />
+        <input type="button" value="submit" onclick="clicked()" /> 
+        Enter value info : <input  type="text" name="name2" />
+        <input type="button" value="submit" onclick="clicked()" /> 
+        
+    </form>
+</body>
+</html>
