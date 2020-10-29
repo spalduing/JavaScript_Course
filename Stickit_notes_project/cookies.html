@@ -14,7 +14,19 @@
 
         // console.log(localStorage.getItem("Juan Jose"));
 
-        localStorage.clear();
+        // localStorage.clear();
+
+        // document.cookie = "username=Miguelangel;";
+
+        // let expiration = new Date();
+        // expiration.setMonth(expiration.getMonth() + 1); // it expires when the sesion ends
+
+        // document.cookie = "username=Miguelangel; expires="+expiration.toUTCString() + ";"; // it expires a month later from now.
+
+        let expiration = new Date();
+        expiration.setMonth(expiration.getMonth() - 1); // you set the expires to a previus date then the cookie just got deleted
+
+        document.cookie = "username=Miguelangel; expires="+expiration.toUTCString() + ";"; // it expires a month later from now.
 
     }
 </script>
