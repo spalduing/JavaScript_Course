@@ -10,8 +10,8 @@ ReactDOM.render(
   <React.StrictMode>
     <HolaMundo />
     <div>
-      <Button text="I'm a button"/>
-      <Button text="Click" />
+      <Button />
+      <Button  />
     </div>
 
   </React.StrictMode>,
