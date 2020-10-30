@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import HolaMundo from './components/HolaMundo.jsx';
+import Button from './components/Button';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     <HolaMundo />
+    <div>
+      <Button text="I'm a button"/>
+      <Button text="Click" />
+    </div>
+
   </React.StrictMode>,
   document.getElementById('root')
 );
