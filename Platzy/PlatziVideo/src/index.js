@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'recat';
+import ReactDOM from 'react';
 import HelloWorld from './components/HelloWorld';
 
 
