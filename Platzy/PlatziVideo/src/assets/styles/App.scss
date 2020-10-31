@@ -8,3 +8,10 @@ body {
   * {
     box-sizing: border-box;
   }
+
+  ::-webkit-scrollbar {
+    scrollbar-width: none;/* Moz */
+    display: none;
+  }
+
+  
