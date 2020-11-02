@@ -22,7 +22,7 @@ let myLaptop = new Object();
 
 myLaptop.brand = "Dell";
 myLaptop.cores = 8;
-myLaptop.storage = "2TB";
+myLaptop["storage"] = "2TB";
 
 console.log(
   "My laptop info: ",
