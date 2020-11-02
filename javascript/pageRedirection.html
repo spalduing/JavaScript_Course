@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="dis">Hello this would disapear</p>
+    <div>
+        <input type="button" value="Click on me To redirect" onclick="redirection()" />
+        <input type="button" value="Click on me To reload" onclick="reload()" />
+        <input type="button" value="Click on me To vanish" onclick="vanish()" />
+    </div>
+    <script>
+        function redirection() {
+            window.location = "https://www.google.com";
+        }
+
+        function reload() {
+            window.location.reload();
+        }
+
+        function vanish() {
+            document.getElementById('dis').innerHTML = "";
+        }
+    </script>
+</body>
+
+</html>
