@@ -168,3 +168,13 @@
 // console.log("obj3==obj4 ?", obj3 == obj4)
 // console.log("obj3===obj4 ?", obj3 === obj4)
 // console.log("Object.is() ?", Object.is(obj3, obj4))
+
+
+//// object destructoring ////
+
+let student = new Object();
+student ["name"] = "Tharun";
+student.age = 21;
+
+let {age, name} = student;
+console.log("Age: ", age, "Name: ", name);
