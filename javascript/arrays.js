@@ -1,4 +1,4 @@
-// Arrays
+//// Arrays ////
 
 let arr = [1, 2, 3, 4];
 
@@ -15,4 +15,36 @@ console.log(arr1);
 
 let arr2 = new Array("Miguel", "Angel", 3, 4);
 
-console.log(arr2)
+console.log(arr2);
+
+//// concatenate ////
+console.log("\nConcatenate");
+
+let arr3 = arr.concat(arr1);
+console.log(arr3);
+
+//// Pop and push ////
+console.log("\nPoping");
+
+arr3.pop();
+console.log(arr3);
+
+arr3.pop();
+console.log(arr3);
+
+console.log("\nPushing");
+
+arr3.push(100);
+console.log(arr3);
+
+//// reverse ////
+console.log("\nReversing");
+
+arr3.reverse();
+console.log(arr3);
+
+//// string ////
+console.log("\nString");
+
+let str = arr3.toString();
+console.log(str);
