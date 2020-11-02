@@ -30,5 +30,7 @@ console.log(
   ", Cores: ",
   myLaptop["cores"],
   ", Storage: ",
-  myLaptop.storage
+  myLaptop.storage,
+  ", screen resolution: ",
+  myLaptop.screenResolution // This property/atribute is undefined
 );
