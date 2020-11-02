@@ -75,3 +75,18 @@
 // console.log("Student's name: ", student.name, "\t Tutor's name: ", tutor.name);
 
 
+// appending
+
+// let student = {
+//   name : "Miguel",
+//   age: 21
+// };
+
+// let skills = {
+//   languages : "Python, JavaScript",
+//   experience : 3
+// }
+
+// student = Object.assign({}, student, skills);
+
+// console.log("Student: ", student, "\t Skills: ", skills);
