@@ -90,3 +90,25 @@
 // student = Object.assign({}, student, skills);
 
 // console.log("Student: ", student, "\t Skills: ", skills);
+
+
+// merging
+
+let student = {
+  name : "Miguel",
+  age: 21
+};
+
+let skills = {
+  languages : "Python, JavaScript",
+  experience : 3
+};
+
+let hobbies = {
+  hobby1 : "Book reading"
+};
+
+// student = Object.assign({}, student, skills, hobbies);
+Object.assign(student, student, skills, hobbies);
+
+console.log("Student: ", student, "\t Skills: ", skills, "\t Hobbies: ", hobbies);
