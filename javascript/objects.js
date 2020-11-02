@@ -47,9 +47,6 @@
 //   }
 // };
 
-// //police
-
-
 // let police = Object.create(occupation);
 
 // police.type = "police";
@@ -60,7 +57,7 @@
 
 ///Object.assing()////
 
-// cloning
+//// cloning ///
 
 // let student = {
 //   name : "Miguel",
@@ -75,7 +72,7 @@
 // console.log("Student's name: ", student.name, "\t Tutor's name: ", tutor.name);
 
 
-// appending
+//// appending ////
 
 // let student = {
 //   name : "Miguel",
@@ -92,7 +89,7 @@
 // console.log("Student: ", student, "\t Skills: ", skills);
 
 
-// merging
+//// merging ////
 
 // let student = {
 //   name : "Miguel",
@@ -114,14 +111,60 @@
 // console.log("Student: ", student, "\t Skills: ", skills, "\t Hobbies: ", hobbies);
 
 
-// delete properties
+//// delete properties ////
 
-let demoObj = new Object;
-demoObj.a = 10;
-demoObj.b = 20;
+// let demoObj = new Object;
+// demoObj.a = 10;
+// demoObj.b = 20;
 
-console.log(demoObj);
+// console.log(demoObj);
 
-delete demoObj.b;
+// delete demoObj.b;
 
-console.log(demoObj);
+// console.log(demoObj);
+
+//// Comparing Objects ////
+
+// comparting variables
+// console.log("\nComparing variables")
+
+// let a = 1
+// let b = 1
+
+// console.log("a==b ?", a==b)
+// console.log("a===b ?", a===b)
+
+// // comparing objects
+// console.log("\n////Comparing objects////")
+
+// // false case
+// console.log("\nFalse case")
+
+// let obj1 = new Object();
+// obj1.name = "Miguel";
+
+// let obj2 = new Object();
+// obj2.name = "Miguel";
+
+// console.log("obj1==obj2 ?", obj1 == obj2)
+// console.log("obj1===obj2 ?", obj1 === obj2)
+// console.log("Object.is() ?", Object.is(obj1, obj2))
+
+// // true case
+// console.log("\nTrue case")
+// let obj3 = new Object();
+// obj1.name = "Miguel";
+
+// let obj4 = obj3;
+
+// console.log("obj3==obj4 ?", obj3 == obj4)
+// console.log("obj3===obj4 ?", obj3 === obj4)
+// console.log("Object.is() ?", Object.is(obj3, obj4))
+
+// console.log("\nWhat happens if I change the name propety of obj3 ?: ")
+
+// obj3.name = "Shiv";
+
+// console.log("obj3==obj4 ?", obj3 == obj4)
+// console.log("obj3===obj4 ?", obj3 === obj4)
+// console.log("Object.is() ?", Object.is(obj3, obj4))
