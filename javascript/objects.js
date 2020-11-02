@@ -94,21 +94,34 @@
 
 // merging
 
-let student = {
-  name : "Miguel",
-  age: 21
-};
+// let student = {
+//   name : "Miguel",
+//   age: 21
+// };
 
-let skills = {
-  languages : "Python, JavaScript",
-  experience : 3
-};
+// let skills = {
+//   languages : "Python, JavaScript",
+//   experience : 3
+// };
 
-let hobbies = {
-  hobby1 : "Book reading"
-};
+// let hobbies = {
+//   hobby1 : "Book reading"
+// };
 
-// student = Object.assign({}, student, skills, hobbies);
-Object.assign(student, student, skills, hobbies);
+// // student = Object.assign({}, student, skills, hobbies);
+// Object.assign(student, student, skills, hobbies);
 
-console.log("Student: ", student, "\t Skills: ", skills, "\t Hobbies: ", hobbies);
+// console.log("Student: ", student, "\t Skills: ", skills, "\t Hobbies: ", hobbies);
+
+
+// delete properties
+
+let demoObj = new Object;
+demoObj.a = 10;
+demoObj.b = 20;
+
+console.log(demoObj);
+
+delete demoObj.b;
+
+console.log(demoObj);
