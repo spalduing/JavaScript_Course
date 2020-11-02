@@ -40,19 +40,38 @@
 
 ///Object.create()////
 
-const occupation = {
-  type : "none",
-  displayType : function(){
-    console.log(this.type);
-  }
-};
+// const occupation = {
+//   type : "none",
+//   displayType : function(){
+//     console.log(this.type);
+//   }
+// };
 
-//police
-
-
-let police = Object.create(occupation);
-
-police.type = "police";
+// //police
 
 
-police.displayType();
+// let police = Object.create(occupation);
+
+// police.type = "police";
+
+
+// police.displayType();
+
+
+///Object.assing()////
+
+// cloning
+
+// let student = {
+//   name : "Miguel",
+//   age: 21
+// };
+
+
+// let tutor = { };
+
+// tutor = Object.assign({}, student);
+
+// console.log("Student's name: ", student.name, "\t Tutor's name: ", tutor.name);
+
+
