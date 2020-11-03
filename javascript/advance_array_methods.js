@@ -71,17 +71,26 @@ employees = [
 //     console.log(employee)
 // })
 
-let newSalaryList = employees.map((employee) => employee["salary"] * 1.25); // Here we're returnin each employee salary increeased by 25%
-console.log(newSalaryList);
+// let newSalaryList = employees.map((employee) => employee["salary"] * 1.25); // Here we're returnin each employee salary increeased by 25%
+// console.log(newSalaryList);
 
-console.log(employee1); // The original employee stills havin hes initial salary
+// console.log(employee1); // The original employee stills havin hes initial salary
 
-//// using reduce ////
+// //// using reduce ////
 
-// Task: To find the total salary of the new increased salaries.
+// // Task: To find the total salary of the new increased salaries.
 
-let finalTotalSalary = newSalaryList.reduce(
-  (totalSalary, currentEmployeeSalary) => totalSalary + currentEmployeeSalary
+// let finalTotalSalary = newSalaryList.reduce(
+//   (totalSalary, currentEmployeeSalary) => totalSalary + currentEmployeeSalary
+// );
+
+// console.log(finalTotalSalary);
+
+//// USING FILTER ////
+// Task: To find employees who have a salary less than 40000
+
+let basicEmployees = employees.filter(
+  (employee) => employee["salary"] <= 40000
 );
 
-console.log(finalTotalSalary);
+console.log(basicEmployees);
