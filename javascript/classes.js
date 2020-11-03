@@ -36,26 +36,42 @@ strawBerries.addIngredients("suggar");
 
 strawBerries.getIngredients();
 
-class IceCream extends Desert {
-  constructor(flavor, calories, toppings = [], ingredients = []) {
-    super(calories, ingredients);
-    this.flavor = flavor;
-    this.toppings = toppings;
-  }
+// class IceCream extends Desert {
+//   constructor(flavor, calories, toppings = [], ingredients = []) {
+//     super(calories, ingredients);
+//     this.flavor = flavor;
+//     this.toppings = toppings;
+//   }
 
-  getIcecream() {
-    console.log(`This is a ${this.flavor} icecream, it haves ${this.calories} calories.
-    It goes with some ${this.toppings[0]}, ${this.toppings[1]} and some 
-      ${this.toppings[3]}. Bon Appetite! `);
-  }
+//   getIcecream() {
+//     console.log(`This is a ${this.flavor} icecream, it has ${this.calories} calories.
+//     It goes with some ${this.toppings[0]}, ${this.toppings[1]} and some
+//       ${this.toppings[3]}. Bon Appetite! `);
+//   }
+// }
+
+// const vanillaBooster = new IceCream(
+//   "Blackberry",
+//   344,
+//   ["Milkmaid", "Honey", "grated chocolate"],
+//   ["milk", "vanilla flavour"]
+// );
+
+// vanillaBooster.getIcecream();
+
+// console.log("The vanillaBooster variable is a(n): ",typeof vanillaBooster);
+// console.log("The vanillaBooster variable is a(n): ",typeof IceCream);
+
+function IceCream(flavor, calories) {
+  this.flavor = flavor;
+  this.calories = calories;
 }
 
-const vanillaBooster = new IceCream(
-  "Blackberry",
-  344,
-  ["Milkmaid","Honey", "grated chocolate"],
-  ["milk", "vanilla flavour"]
-);
+IceCream.prototype.getIcecream = function () {
+  console.log(`This is a ${this.flavor} icecream, it has ${this.calories} calories.
+                 Bon Appetite! `);
+};
 
+const vanillaBooster = new IceCream("Vanilla", 275);
 
 vanillaBooster.getIcecream();
