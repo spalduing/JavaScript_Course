@@ -89,8 +89,18 @@ employees = [
 //// USING FILTER ////
 // Task: To find employees who have a salary less than 40000
 
-let basicEmployees = employees.filter(
-  (employee) => employee["salary"] <= 40000
-);
+// let basicEmployees = employees.filter(
+//   (employee) => employee["salary"] <= 40000
+// );
 
-console.log(basicEmployees);
+// console.log(basicEmployees);
+
+//// USING SOME ////
+// Task: To find if any employee has salary less than 15000
+
+let isSalLessThan15 = employees.some((employee) => employee["salary"] <= 15000);
+
+console.log(
+  "Theres any employee with a salary less than 15000 ? : ",
+  isSalLessThan15
+);
