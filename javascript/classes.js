@@ -35,3 +35,27 @@ strawBerries.addIngredients("milk");
 strawBerries.addIngredients("suggar");
 
 strawBerries.getIngredients();
+
+class IceCream extends Desert {
+  constructor(flavor, calories, toppings = [], ingredients = []) {
+    super(calories, ingredients);
+    this.flavor = flavor;
+    this.toppings = toppings;
+  }
+
+  getIcecream() {
+    console.log(`This is a ${this.flavor} icecream, it haves ${this.calories} calories.
+    It goes with some ${this.toppings[0]}, ${this.toppings[1]} and some 
+      ${this.toppings[3]}. Bon Appetite! `);
+  }
+}
+
+const vanillaBooster = new IceCream(
+  "Blackberry",
+  344,
+  ["Milkmaid","Honey", "grated chocolate"],
+  ["milk", "vanilla flavour"]
+);
+
+
+vanillaBooster.getIcecream();
