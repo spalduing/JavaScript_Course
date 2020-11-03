@@ -98,9 +98,21 @@ employees = [
 //// USING SOME ////
 // Task: To find if any employee has salary less than 15000
 
-let isSalLessThan15 = employees.some((employee) => employee["salary"] <= 15000);
+// let isSalLessThan15 = employees.some((employee) => employee["salary"] <= 15000);
+
+// console.log(
+//   "Theres any employee with a salary less than 15000 ? : ",
+//   isSalLessThan15
+// );
+
+//// USING EVERY ////
+// Task: To find if EVERY employe have a salary about 20000
+
+let isSalMoreThan20 = employees.every(
+  (employee) => employee["salary"] >= 20000
+);
 
 console.log(
-  "Theres any employee with a salary less than 15000 ? : ",
-  isSalLessThan15
+  "Have all the employees a salary greater than 20000 ? : ",
+  isSalMoreThan20
 );
