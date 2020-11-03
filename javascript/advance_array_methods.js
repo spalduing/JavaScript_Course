@@ -59,12 +59,11 @@ employees = [
   employee9,
 ];
 
-
 // Task, encrease the salary of all employees by 25%
 
 // employees.map(employee => {
 //    console.log(employee)
-//    employee.salary *= 1.25 
+//    employee.salary *= 1.25
 // })
 
 // console.log("\n")
@@ -72,7 +71,17 @@ employees = [
 //     console.log(employee)
 // })
 
-let newSalaryList = employees.map(employee => employee['salary']*1.25); // Here we're returnin each employee salary increeased by 25%
+let newSalaryList = employees.map((employee) => employee["salary"] * 1.25); // Here we're returnin each employee salary increeased by 25%
 console.log(newSalaryList);
 
 console.log(employee1); // The original employee stills havin hes initial salary
+
+//// using reduce ////
+
+// Task: To find the total salary of the new increased salaries.
+
+let finalTotalSalary = newSalaryList.reduce(
+  (totalSalary, currentEmployeeSalary) => totalSalary + currentEmployeeSalary
+);
+
+console.log(finalTotalSalary);
