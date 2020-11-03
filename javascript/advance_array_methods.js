@@ -108,11 +108,18 @@ employees = [
 //// USING EVERY ////
 // Task: To find if EVERY employe have a salary about 20000
 
-let isSalMoreThan20 = employees.every(
-  (employee) => employee["salary"] >= 20000
-);
+// let isSalMoreThan20 = employees.every(
+//   (employee) => employee["salary"] >= 20000
+// );
 
-console.log(
-  "Have all the employees a salary greater than 20000 ? : ",
-  isSalMoreThan20
-);
+// console.log(
+//   "Have all the employees a salary greater than 20000 ? : ",
+//   isSalMoreThan20
+// );
+
+//// USING FIND ////
+// Task: To find the employee with the name Miguel and get his details
+
+let miguelDetails = employees.find((employee) => employee["name"] === "Miguel");
+
+console.log(miguelDetails)
