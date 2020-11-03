@@ -17,7 +17,7 @@ employee3 = {
 };
 employee4 = {
   name: "Jose",
-  position: "5485",
+  position: "Horseman",
   salary: "90000",
 };
 employee5 = {
@@ -120,6 +120,12 @@ employees = [
 //// USING FIND ////
 // Task: To find the employee with the name Miguel and get his details
 
-let miguelDetails = employees.find((employee) => employee["name"] === "Miguel");
+// let miguelDetails = employees.find((employee) => employee["name"] === "Miguel");
 
-console.log(miguelDetails)
+// console.log(miguelDetails)
+
+//// USING FINDINDEX ////
+
+let josePosition = employees.findIndex((employee) => employee["name"] === "Jose");
+
+console.log("The position of Jose in the array is: ", josePosition);
