@@ -126,6 +126,6 @@ employees = [
 
 //// USING FINDINDEX ////
 
-let josePosition = employees.findIndex((employee) => employee["name"] === "Jose");
+// let josePosition = employees.findIndex((employee) => employee["name"] === "Jose");
 
-console.log("The position of Jose in the array is: ", josePosition);
+// console.log("The position of Jose in the array is: ", josePosition);
