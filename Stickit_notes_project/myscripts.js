@@ -35,7 +35,9 @@ function createUL() {
   ulTag.appendChild(liTag);
 }
 
+let count = 0;
 function createNote(noteTitle, noteBody) {
+  count += 1;
   document.getElementById("no-notes").classList.add("hidden");
 
   if (document.getElementById("notes") == null) {
@@ -85,11 +87,16 @@ function createNoteFromInput(e) {
 
 function removeItem(e) {
   if (e.target.classList.contains("delete")) {
-    if(confirm('Are you sure you wanna delete this note?')){
+    if (confirm("Are you sure you wanna delete this note?")) {
       let aTag = e.target.parentElement;
       let liTag = e.target.parentElement.parentElement;
       liTag.removeChild(aTag);
     }
+  }
+
+  count -= 1;
+  if (count < 1) {
+    document.getElementById("no-notes").className = "";
   }
 }
 
