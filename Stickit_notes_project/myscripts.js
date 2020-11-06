@@ -74,11 +74,11 @@ function createNoteFromInput(e) {
   document.getElementById("new-note-title-input").value = "";
   document.getElementById("new-note-body-input").value = "";
 
+  createNote(noteTitle, noteBody);
+
   count += 1;
   window.localStorage.setItem("count", count);
   window.localStorage.setItem(noteTitle, noteBody);
-
-  createNote(noteTitle, noteBody);
 }
 
 function removeItem(e) {
@@ -92,7 +92,7 @@ function removeItem(e) {
 
   count -= 1;
   window.localStorage.setItem("count", count);
-  window.localStorage.setItem("", "");
+  window.localStorage.removeItem(e.target.previusElementSibling.innerText);
   if (count < 1) {
     document.getElementById("no-notes").className = "";
   }
