@@ -27,24 +27,15 @@ function* noteCount() {
   }
 }
 
-function createUL() {
-  let ulTag = document.createElement("ul");
-  let liTag = document.createElement("li");
-  ulTag.id = "notes";
-  liTag.id = "notes-list";
-  ulTag.appendChild(liTag);
+let count = Number(window.localStorage.getItem("count"));
+if (!count) {
+  window.localStorage.setItem("count", "0");
 }
 
-let count = 0;
 function createNote(noteTitle, noteBody) {
-  count += 1;
   document.getElementById("no-notes").classList.add("hidden");
-
-  if (document.getElementById("notes") == null) {
-    createUL();
-  }
-  let liTag = document.getElementById("notes-list");
-
+  let ulTag = document.createElement("ul");
+  let liTag = document.createElement("li");
   let aTag = document.createElement("a");
   let h2Tag = document.createElement("h2");
   let btnTag = document.createElement("button");
@@ -61,15 +52,16 @@ function createNote(noteTitle, noteBody) {
   aTag.appendChild(h2Tag);
   aTag.appendChild(btnTag);
   aTag.appendChild(pTag);
+  liTag.appendChild(aTag);
 
-  let lastNote = document.querySelector("a:last-child");
+  let lastNote = document.querySelector("li:last-child");
 
   if (lastNote == null) {
-    liTag.appendChild(aTag);
-    liTag.insertAdjacentElement("afterbegin", aTag);
+    ulTag.appendChild(liTag);
+    ulTag.insertAdjacentElement("afterbegin", liTag);
   } else {
-    liTag.appendChild(aTag);
-    lastNote.insertAdjacentElement("afterend", aTag);
+    ulTag.appendChild(liTag);
+    lastNote.insertAdjacentElement("afterend", liTag);
   }
 }
 
@@ -82,22 +74,38 @@ function createNoteFromInput(e) {
   document.getElementById("new-note-title-input").value = "";
   document.getElementById("new-note-body-input").value = "";
 
+  count += 1;
+  window.localStorage.setItem("count", count);
+  window.localStorage.setItem(noteTitle, noteBody);
+
   createNote(noteTitle, noteBody);
 }
 
 function removeItem(e) {
   if (e.target.classList.contains("delete")) {
     if (confirm("Are you sure you wanna delete this note?")) {
-      let aTag = e.target.parentElement;
       let liTag = e.target.parentElement.parentElement;
-      liTag.removeChild(aTag);
+      let ulTag = document.getElementById("notes");
+      ulTag.removeChild(liTag);
     }
   }
 
   count -= 1;
+  window.localStorage.setItem("count", count);
+  window.localStorage.setItem("", "");
   if (count < 1) {
     document.getElementById("no-notes").className = "";
   }
+}
+
+for (i = 0; i < count + 1; i++) {
+  let noteTitle = window.localStorage.key(i);
+  let noteBody = window.localStorage.getItem(noteTitle);
+
+  if(noteTitle !== "count" && noteTitle){
+    createNote(noteTitle, noteBody);
+  }
+
 }
 
 document
