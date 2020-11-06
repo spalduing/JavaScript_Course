@@ -74,11 +74,18 @@ function createNoteFromInput(e) {
   document.getElementById("new-note-title-input").value = "";
   document.getElementById("new-note-body-input").value = "";
 
-  createNote(noteTitle, noteBody);
-
   count += 1;
   window.localStorage.setItem("count", count);
+
+  while (window.localStorage.getItem(noteTitle)) {
+    noteTitle += " - 1";
+  }
+
   window.localStorage.setItem(noteTitle, noteBody);
+
+  createNote(noteTitle, noteBody);
+
+
 }
 
 function removeItem(e) {
@@ -102,10 +109,9 @@ for (i = 0; i < count + 1; i++) {
   let noteTitle = window.localStorage.key(i);
   let noteBody = window.localStorage.getItem(noteTitle);
 
-  if(noteTitle !== "count" && noteTitle){
+  if (noteTitle !== "count" && noteTitle) {
     createNote(noteTitle, noteBody);
   }
-
 }
 
 document
