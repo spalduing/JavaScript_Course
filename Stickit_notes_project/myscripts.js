@@ -94,17 +94,17 @@ function createNoteFromInput(e) {
 }
 
 function removeItem(e) {
-  if (e.target.classList.contains("delete")) {
+  if (e.currentTarget.classList.contains("delete")) {
     if (confirm("Are you sure you wanna delete this note?")) {
       let liTag = e.target.parentElement.parentElement;
       let ulTag = document.getElementById("notes");
       ulTag.removeChild(liTag);
+      count -= 1;
+      window.localStorage.setItem("count", count);
+      window.localStorage.removeItem(e.currentTarget.parentElement.id);
     }
   }
 
-  count -= 1;
-  window.localStorage.setItem("count", count);
-  window.localStorage.removeItem(e.target.previusElementSibling.innerText);
   if (count < 1) {
     document.getElementById("no-notes").className = "";
   }
