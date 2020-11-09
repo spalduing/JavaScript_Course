@@ -20,6 +20,11 @@
 //   console.log(e.shiftKey);
 // });
 
+if ('serviceWorker' in navigator) {
+  // register service worker
+  navigator.serviceWorker.register('service-worker.js');
+}
+
 function* noteCount() {
   let count = 1;
   while (true) {
