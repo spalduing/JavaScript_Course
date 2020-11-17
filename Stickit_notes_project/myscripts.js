@@ -20,9 +20,9 @@
 //   console.log(e.shiftKey);
 // });
 
-if ('serviceWorker' in navigator) {
+if ("serviceWorker" in navigator) {
   // register service worker
-  navigator.serviceWorker.register('service-worker.js');
+  navigator.serviceWorker.register("service-worker.js");
 }
 
 function* noteCount() {
@@ -89,19 +89,18 @@ function createNoteFromInput(e) {
   window.localStorage.setItem(noteTitle, noteBody);
 
   createNote(noteTitle, noteBody);
-
-
 }
 
 function removeItem(e) {
-  if (e.currentTarget.classList.contains("delete")) {
+  if (e.target.classList.contains("delete")) {
     if (confirm("Are you sure you wanna delete this note?")) {
       let liTag = e.target.parentElement.parentElement;
       let ulTag = document.getElementById("notes");
       ulTag.removeChild(liTag);
       count -= 1;
       window.localStorage.setItem("count", count);
-      window.localStorage.removeItem(e.currentTarget.parentElement.id);
+      console.log(e.target.previousElementSibling.innerHTML);
+      window.localStorage.removeItem(e.target.previousElementSibling.innerHTML);
     }
   }
 
